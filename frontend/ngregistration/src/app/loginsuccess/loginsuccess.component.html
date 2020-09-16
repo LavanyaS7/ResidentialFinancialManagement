@@ -1,0 +1,71 @@
+    <style>
+      body {
+        background-image: url('https://cdn.corecanvas.com/cobalt2018-159ec3bd/media/2000/5bf49745b47890_2334-WLA135-EXT-CAM-02-OPT_B.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+    </style>
+    <body>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/payment">Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search with User Name" name="username" [(ngModel)]="username"/>
+          <button class="btn btn-success" type="button" (click)="getuserDetailsByUsername()">Search</button>
+        </form>
+      </nav>
+    <div class="container">
+        <br><br>
+        <h1 style="text-align:center; font-family: cursive; color:snow;">SEA MERIDIAN RESIDENTIAL ASSOCIATION</h1>
+        <br>
+        <h2 style="text-align:center; font-family: cursive; color:snow;">Residents List</h2>  
+        <br><br>          
+        <table class="table table-striped">
+          <thead>
+            <tr style="font-size: larger; font-family: cursive; color:snow;">
+              <th>ID</th>
+              <th>Door Number</th>
+              <th>Username</th>
+              <th>Monthly Maintenance</th>
+              <th>Parking Charges</th>
+              <th>Total Amount</th>
+              <th>Payment Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="font-family: cursive; font-size: large; color:cyan; font-variant: small-caps;" *ngFor="let detail of _detailslist | async">
+              <td>{{detail.id}}</td>
+              <td>{{detail.door_no}}</td>
+              <td>{{detail.name}}</td>
+              <td>{{detail.monthly_Maintenance}}</td>
+              <td>{{detail.parking_charges}}</td>
+              <td>{{detail.total_Amount}}</td>
+              <td>{{detail.date}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </body>
